@@ -2,15 +2,12 @@ name: netflims
 services:
 - name: netflims-web
   github:
-    repo: dhirajgupta98700-ops/netflims
+    repo: dhirajgupta9870/netflim
     branch: main
-  build_command: echo "Building frontend..."
   source_dir: /
+  build_command: npm install 2>/dev/null || echo "No npm needed"
+  run_command: echo "Serving static files"
   http_port: 8080
-  static_sites:
-  - source_dir: /
-    routes:
-    - path: /
   envs:
-  - key: FLASK_ENV
+  - key: NODE_ENV
     value: production
