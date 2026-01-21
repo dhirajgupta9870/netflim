@@ -1,6 +1,10 @@
 [build]
-  command = "echo 'Static site - no build needed'"
+  command = "echo 'Static HTML/CSS/JS site - publishing as-is'"
   publish = "."
+
+[build.environment]
+  PYTHON_VERSION = "3.11"
+  SKIP_PYTHON_INSTALL = "true"
 
 [[redirects]]
   from = "/*"
